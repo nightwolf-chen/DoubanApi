@@ -31,11 +31,18 @@ import org.apache.http.impl.client.HttpClients;
  */
 public class HttpClientAdaptor {
 
+    /**
+     *
+     */
     protected CloseableHttpClient httpclient = HttpClients.createDefault();
     private final HttpClientContext localContext = HttpClientContext.create();
     private final int timeout = 3000;
     private String encode = "utf8";
 
+    /**
+     *
+     * @param encode
+     */
     public HttpClientAdaptor(String encode) {
 
         CookieStore cookieStore = new BasicCookieStore();
@@ -43,14 +50,22 @@ public class HttpClientAdaptor {
         this.encode = encode;
 
     }
-    
-     public HttpClientAdaptor() {
+
+    /**
+     *
+     */
+    public HttpClientAdaptor() {
 
         CookieStore cookieStore = new BasicCookieStore();
         localContext.setCookieStore(cookieStore);
 
     }
 
+    /**
+     *
+     * @param url
+     * @return
+     */
     public String doGet(String url) {
 
         try {
@@ -86,6 +101,12 @@ public class HttpClientAdaptor {
         return null;
     }
 
+    /**
+     *
+     * @param url
+     * @param parameters
+     * @return
+     */
     public String doPost(String url, List<NameValuePair> parameters) {
 
         try {
@@ -125,6 +146,9 @@ public class HttpClientAdaptor {
         return null;
     }
 
+    /**
+     *
+     */
     public void close(){
         try {
             this.httpclient.close();

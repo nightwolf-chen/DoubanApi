@@ -35,7 +35,7 @@ public class DynamicChannelsUpdator extends ChannelUpdator {
     }
 
     @Override
-    void attemptToUpdate() {
+    public void attemptToUpdate() {
 
         ExecutorServiceManager.defaultExecutor.execute(new Runnable() {
 

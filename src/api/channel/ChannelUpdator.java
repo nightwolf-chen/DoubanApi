@@ -18,5 +18,5 @@ abstract public class ChannelUpdator{
         this.delegate = delegate;
     }
     
-    abstract void attemptToUpdate();
+    public abstract void attemptToUpdate();
 }

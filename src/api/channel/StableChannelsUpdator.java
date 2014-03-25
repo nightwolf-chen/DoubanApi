@@ -24,7 +24,7 @@ public class StableChannelsUpdator extends ChannelUpdator {
     }
 
     @Override
-    void attemptToUpdate() {
+    public void attemptToUpdate() {
 
         ExecutorServiceManager.defaultExecutor.execute(new Runnable() {
 

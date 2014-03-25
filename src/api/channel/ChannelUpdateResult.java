@@ -14,6 +14,7 @@ import java.util.Map;
  * @author bruce
  */
 public class ChannelUpdateResult {
+    
     private final List<Channel> channels;
     private Map<String,String> category = null;
     

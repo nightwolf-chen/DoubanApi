@@ -6,8 +6,6 @@
 
 package network;
 
-import org.apache.http.HttpHost;
-
 /**
  *
  * @author bruce

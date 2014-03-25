@@ -76,7 +76,7 @@ public class HttpClientAdaptor {
                     .custom()
                     .setSocketTimeout(timeout)
                     .setConnectTimeout(timeout)
-                    .setCookieSpec(CookieSpecs.BROWSER_COMPATIBILITY)
+                    .setCookieSpec(CookieSpecs.IGNORE_COOKIES)
                     .build();
             httpGet.setConfig(requestConfig);
 
@@ -117,7 +117,7 @@ public class HttpClientAdaptor {
                     .custom()
                     .setSocketTimeout(timeout)
                     .setConnectTimeout(timeout)
-                    .setCookieSpec(CookieSpecs.BROWSER_COMPATIBILITY)
+                    .setCookieSpec(CookieSpecs.IGNORE_COOKIES)
                     .build();
             
             httpPost.setConfig(requestConfig);

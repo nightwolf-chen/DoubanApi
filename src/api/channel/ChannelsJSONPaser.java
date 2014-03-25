@@ -12,6 +12,12 @@ import java.util.List;
  *
  * @author bruce
  */
-public interface ChannelUpdatorDelegate {
-    public void didRecieveLatestChannelRecords(ChannelUpdateResult result);
+abstract class ChannelsJSONPaser {
+    
+    protected String jsonStr;
+    
+    public ChannelsJSONPaser(String jsonStr){
+        this.jsonStr = jsonStr;
+    }
+    abstract public List<Channel> paser();
 }

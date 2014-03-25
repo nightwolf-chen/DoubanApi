@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package api.channel;
 
 import java.util.ArrayList;
@@ -18,16 +17,21 @@ import org.json.JSONObject;
  *
  * @author bruce
  */
-public class ChannelUpdateResponse {
-    
-    private final List<Channel> records = new ArrayList<Channel>();
-    
-    public ChannelUpdateResponse(String jsonStr){
+public class StableChannelsJSONPaser extends ChannelsJSONPaser {
+
+    public StableChannelsJSONPaser(String jsonStr) {
+        super(jsonStr);
+    }
+
+    @Override
+    public List<Channel> paser() {
         
-        try {   
+        List<Channel> records = new ArrayList<Channel>();
+        try {
+
             JSONArray channels = new JSONObject(jsonStr).getJSONArray("channels");
-            
-            for(int i = 0 ; i < channels.length() ;i++){
+
+            for (int i = 0; i < channels.length(); i++) {
                 JSONObject channel = channels.getJSONObject(i);
                 Channel aRecord = new Channel();
                 aRecord.chineseName = channel.getString("name");
@@ -36,15 +40,13 @@ public class ChannelUpdateResponse {
                 aRecord.addr_en = channel.getString("abbr_en");
                 records.add(aRecord);
             }
-            
-        } catch (JSONException ex) {
-            Logger.getLogger(ChannelUpdateResponse.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
 
-    public List<Channel> getRecords() {
+        } catch (JSONException ex) {
+            Logger.getLogger(StableChannelsJSONPaser.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
         return records;
+        
     }
-    
     
 }

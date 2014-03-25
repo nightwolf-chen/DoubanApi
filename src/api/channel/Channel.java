@@ -6,10 +6,20 @@
 
 package api.channel;
 
+import java.io.Serializable;
+
 /**
  *
  * @author bruce
  */
-public class Channel {
-    
+public class Channel implements Serializable{
+    public int channel_id;
+    public String chineseName;
+    public String addr_en;
+    public String englishName;
+    public String categoryId;
+    public String categoryName;
+    public String coverImgUrl;
+    public String intro;
+    public int songNum;
 }

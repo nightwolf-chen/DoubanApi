@@ -20,7 +20,7 @@ import org.json.JSONObject;
  */
 public class ChannelUpdateResponse {
     
-    private final List<ChannelRecord> records = new ArrayList<ChannelRecord>();
+    private final List<Channel> records = new ArrayList<Channel>();
     
     public ChannelUpdateResponse(String jsonStr){
         
@@ -29,7 +29,7 @@ public class ChannelUpdateResponse {
             
             for(int i = 0 ; i < channels.length() ;i++){
                 JSONObject channel = channels.getJSONObject(i);
-                ChannelRecord aRecord = new ChannelRecord();
+                Channel aRecord = new Channel();
                 aRecord.chineseName = channel.getString("name");
                 aRecord.englishName = channel.getString("name_en");
                 aRecord.channel_id = channel.getInt("channel_id");
@@ -42,7 +42,7 @@ public class ChannelUpdateResponse {
         }
     }
 
-    public List<ChannelRecord> getRecords() {
+    public List<Channel> getRecords() {
         return records;
     }
     

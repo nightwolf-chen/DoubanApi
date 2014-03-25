@@ -13,5 +13,5 @@ import java.util.List;
  * @author bruce
  */
 public interface ChannelUpdatorDelegate {
-    public void didRecieveLatestChannelRecords(List<ChannelRecord> channelRecords);
+    public void didRecieveLatestChannelRecords(List<Channel> channelRecords);
 }

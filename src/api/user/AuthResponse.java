@@ -31,6 +31,7 @@ public class AuthResponse {
             
             this.result = respObj.getInt("r");
             this.errorDescription = respObj.getString("err");
+            this.errorDescription = this.errorDescription.replaceAll("_", " ");
             
             if (respObj.getInt("r") == 0) { 
                 this.email = respObj.getString("email");

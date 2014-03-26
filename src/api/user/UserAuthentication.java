@@ -20,11 +20,11 @@ import util.GlobleVarables;
  */
 public class UserAuthentication {
 
-    private BasicUser user;
+    private User user;
     private String authAdrress;
     UserAuthenticationDelegate delegate;
 
-    public UserAuthentication(BasicUser user, UserAuthenticationDelegate delegate) {
+    public UserAuthentication(User user, UserAuthenticationDelegate delegate) {
         this.user = user;
         this.delegate = delegate;
         this.authAdrress = GlobleVarables.apiProtocool + "://" + GlobleVarables.apiDomainName + "/j/app/login";

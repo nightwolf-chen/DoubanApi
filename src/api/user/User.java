@@ -6,12 +6,17 @@
 
 package api.user;
 
+import java.io.Serializable;
+
 /**
  *
  * @author bruce
  */
-public class BasicUser {
+public class User implements Serializable{
     public String username;
     public String password;
     public String email;
+    public String token;
+    public String expire;
+    public String userid;
 }

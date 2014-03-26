@@ -6,7 +6,7 @@
 
 package api;
 
-import api.user.BasicUser;
+import api.user.User;
 import api.user.UserAuthentication;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -23,7 +23,7 @@ public class UserAuthTest {
     @Test
     public void testValidUserTestAuth() {
 
-        BasicUser user = new BasicUser();
+        User user = new User();
        
 
         UserAuthDelegateTest testDelegate = new UserAuthDelegateTest();
@@ -35,7 +35,7 @@ public class UserAuthTest {
     
     @Test
     public void testInvalidUserTestAuth(){
-        BasicUser user = new BasicUser();
+        User user = new User();
       
 
         UserAuthDelegateTest testDelegate = new UserAuthDelegateTest();

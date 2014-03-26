@@ -16,14 +16,10 @@ import org.json.JSONObject;
  */
 public class AuthResponse {
 
-    private String userid;
     private String errorDescription;
-    private String token;
     private int result;
-    private String username;
-    private String email;
-    private String expire;
-
+    private User user = new User();
+    
     public AuthResponse(String jsonResp) {
         try {
 
@@ -34,36 +30,16 @@ public class AuthResponse {
             this.errorDescription = this.errorDescription.replaceAll("_", " ");
             
             if (respObj.getInt("r") == 0) { 
-                this.email = respObj.getString("email");
-                this.expire = respObj.getString("expire");
-                this.token = respObj.getString("token");
-                this.userid = respObj.getString("user_id");
-                this.username = respObj.getString("user_name");
+                this.user.email = respObj.getString("email");
+                this.user.expire = respObj.getString("expire");
+                this.user.token = respObj.getString("token");
+                this.user.userid = respObj.getString("user_id");
+                this.user.username = respObj.getString("user_name");
             } 
             
         } catch (JSONException ex) {
             Logger.getLogger(AuthResponse.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }
-
-    public String getUserid() {
-        return userid;
-    }
-
-    public String getErrorDescription() {
-        return errorDescription;
-    }
-
-    public String getToken() {
-        return token;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public String getEmail() {
-        return email;
     }
 
     public boolean isSuccessLogin() {
@@ -75,4 +51,13 @@ public class AuthResponse {
         }
     }
 
+     public String getErrorDescription() {
+        return errorDescription;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+     
 }

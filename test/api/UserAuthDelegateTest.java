@@ -6,8 +6,8 @@
 
 package api;
 
-import api.user.AuthResponse;
-import api.user.UserAuthenticationDelegate;
+import org.nirvawolf.douban.api.user.AuthResponse;
+import org.nirvawolf.douban.api.user.UserAuthenticationDelegate;
 
 /**
  *

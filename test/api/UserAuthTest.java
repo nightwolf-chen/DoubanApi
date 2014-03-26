@@ -6,8 +6,8 @@
 
 package api;
 
-import api.user.User;
-import api.user.UserAuthentication;
+import org.nirvawolf.douban.api.user.User;
+import org.nirvawolf.douban.api.user.UserAuthentication;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;

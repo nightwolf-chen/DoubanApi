@@ -10,7 +10,7 @@ package org.nirvawolf.douban.api.song;
  * @author bruce
  */
 public class Song {
-
+    
     public String albumPageUrl;
     public String albumTitle;
     public String pictureUrl;
@@ -26,4 +26,5 @@ public class Song {
     public int like;
     public int length;
     public double ratingAverage;
+    
 }

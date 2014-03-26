@@ -13,14 +13,12 @@ import org.nirvawolf.douban.api.user.User;
  *
  * @author bruce
  */
-public class SongActionRequestInfo {
+public class SongRequestInfo {
     
-    public static enum ActionType{BYE,END,SKIP,RATE,UNRATE};
+    public static enum ActionType{BYE,END,SKIP,RATE,UNRATE,NEW,PLAYING};
     
     public Song song = null;
     public User user = null;
     public Channel channel=null;
     public ActionType type;
-
-      
 }

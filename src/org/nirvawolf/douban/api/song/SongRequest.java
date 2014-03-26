@@ -19,9 +19,9 @@ import org.nirvawolf.douban.network.HttpClientAdaptorFactory;
  *
  * @author bruce
  */
-public class SongActionRequest extends Request {
+public class SongRequest extends Request {
 
-    public SongActionRequest(RequestDelegate delegate, SongActionRequestInfo songRequestInfo) {
+    public SongRequest(RequestDelegate delegate, SongRequestInfo songRequestInfo) {
 
         super(delegate);
 
@@ -54,6 +54,12 @@ public class SongActionRequest extends Request {
             case UNRATE:
                 typeStr = "u";
                 break;
+            case NEW:
+                typeStr = "n";
+                break;
+            case PLAYING:
+                typeStr = "p";
+                break;
         }
 
         this.apiAddress += "&type=" + typeStr;
@@ -71,7 +77,7 @@ public class SongActionRequest extends Request {
             url = builder.build().toString();
 
         } catch (URISyntaxException ex) {
-            Logger.getLogger(SongActionRequest.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SongRequest.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         return url;
@@ -87,7 +93,7 @@ public class SongActionRequest extends Request {
             url = builder.build().toString();
 
         } catch (URISyntaxException ex) {
-            Logger.getLogger(SongActionRequest.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SongRequest.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         return url;
@@ -102,7 +108,7 @@ public class SongActionRequest extends Request {
             url = builder.build().toString();
 
         } catch (URISyntaxException ex) {
-            Logger.getLogger(SongActionRequest.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SongRequest.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         return url;
@@ -142,12 +148,12 @@ public class SongActionRequest extends Request {
         Channel channel = new Channel();
         channel.channel_id = 2;
 
-        SongActionRequestInfo info = new SongActionRequestInfo();
+        SongRequestInfo info = new SongRequestInfo();
         info.song = song;
         info.channel = channel;
-        info.type = SongActionRequestInfo.ActionType.SKIP;
+        info.type = SongRequestInfo.ActionType.SKIP;
 
-        new SongActionRequest(delegate, info).attemptToRequest();
+        new SongRequest(delegate, info).attemptToRequest();
     }
 
 }

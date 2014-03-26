@@ -6,8 +6,6 @@
 
 package org.nirvawolf.douban.api.channel;
 
-import java.util.List;
-
 /**
  *
  * @author bruce

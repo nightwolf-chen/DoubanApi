@@ -123,6 +123,7 @@ public class SongRequest extends Request {
 
                 HttpClientAdaptor clientAdaptor = HttpClientAdaptorFactory.createDefaultHttpClientAdaptor();
                 String jsonStr = clientAdaptor.doGet(apiAddress);
+//                System.out.println(apiAddress);
                 clientAdaptor.close();
                 delegate.didRecieveResponse(new RequestResponse(jsonStr));
 

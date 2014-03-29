@@ -5,6 +5,7 @@
  */
 package org.nirvawolf.douban.api.channel;
 
+import java.io.Serializable;
 import org.nirvawolf.douban.concurrent.ExecutorServiceManager;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
@@ -23,7 +24,7 @@ import org.apache.http.client.utils.URIBuilder;
  *
  * @author bruce
  */
-public class DynamicChannelsUpdator extends ChannelUpdator {
+public class DynamicChannelsUpdator extends ChannelUpdator implements Serializable{
 
     private final String apiAddress = "http://douban.fm/j/explore/genre";
     private final String parameterNameGid = "gid";
@@ -47,6 +48,13 @@ public class DynamicChannelsUpdator extends ChannelUpdator {
                 Map<String, String> categoryIds = getChannelCategories();
 
                 for (String categoryId : categoryIds.keySet()) {
+                    
+                    try {
+                        Thread.sleep(500);
+                    } catch (InterruptedException ex) {
+                        Logger.getLogger(DynamicChannelsUpdator.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    
                     String categoryName = categoryIds.get(categoryId);
                     channels.addAll(getChannelsByCategoryId(categoryId, categoryName));
                 }

@@ -5,11 +5,13 @@
  */
 package org.nirvawolf.douban.api.song;
 
+import java.io.Serializable;
+
 /**
  *
  * @author bruce
  */
-public class Song {
+public class Song implements Serializable{
     
     public String albumPageUrl;
     public String albumTitle;

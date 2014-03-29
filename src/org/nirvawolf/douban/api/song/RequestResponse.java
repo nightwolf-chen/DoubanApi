@@ -26,7 +26,7 @@ public class RequestResponse {
     public RequestResponse(String jsonStr) {
 
         try {
-
+//            System.out.print(jsonStr);
             JSONObject obj = new JSONObject(jsonStr);
             result = obj.getInt("r") == 1 ? false : true;
             versionMax = obj.getInt("version_max");
@@ -40,7 +40,7 @@ public class RequestResponse {
                     Song aSong = new Song();
                     aSong.albumPageUrl = songObj.getString("album");
                     aSong.pictureUrl = songObj.getString("picture");
-                    aSong.ssid = songObj.getString("ssid");
+//                    aSong.ssid = songObj.getString("ssid");
                     aSong.artist = songObj.getString("artist");
                     aSong.songUrl = songObj.getString("url");
                     aSong.company = songObj.getString("company");

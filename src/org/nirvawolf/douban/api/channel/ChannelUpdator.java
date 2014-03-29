@@ -6,11 +6,13 @@
 
 package org.nirvawolf.douban.api.channel;
 
+import java.io.Serializable;
+
 /**
  *
  * @author bruce
  */
-abstract public class ChannelUpdator{
+abstract public class ChannelUpdator implements Serializable{
     
     protected ChannelUpdatorDelegate delegate;
     

@@ -5,6 +5,7 @@
  */
 package org.nirvawolf.douban.api.channel;
 
+import java.io.Serializable;
 import org.nirvawolf.douban.concurrent.ExecutorServiceManager;
 import org.nirvawolf.douban.network.HttpClientAdaptor;
 import org.nirvawolf.douban.network.HttpClientAdaptorFactory;
@@ -14,7 +15,7 @@ import org.nirvawolf.douban.util.GlobleVarables;
  *
  * @author bruce
  */
-public class StableChannelsUpdator extends ChannelUpdator {
+public class StableChannelsUpdator extends ChannelUpdator implements Serializable{
 
     private String apiAddress;
 

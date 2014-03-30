@@ -6,7 +6,6 @@
 package org.nirvawolf.douban.api.channel;
 
 import java.io.Serializable;
-import org.nirvawolf.douban.concurrent.ExecutorServiceManager;
 import org.nirvawolf.douban.network.HttpClientAdaptor;
 import org.nirvawolf.douban.network.HttpClientAdaptorFactory;
 import org.nirvawolf.douban.util.GlobleVarables;
@@ -27,7 +26,7 @@ public class StableChannelsUpdator extends ChannelUpdator implements Serializabl
     @Override
     public void attemptToUpdate() {
 
-        ExecutorServiceManager.defaultExecutor.execute(new Runnable() {
+        Thread thread = new Thread(new Runnable() {
 
             @Override
             public void run() {
@@ -43,6 +42,8 @@ public class StableChannelsUpdator extends ChannelUpdator implements Serializabl
             }
             
         });
+        
+        thread.start();
 
     }
 

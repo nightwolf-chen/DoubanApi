@@ -6,7 +6,6 @@
 package org.nirvawolf.douban.api.channel;
 
 import java.io.Serializable;
-import org.nirvawolf.douban.concurrent.ExecutorServiceManager;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -38,7 +37,7 @@ public class DynamicChannelsUpdator extends ChannelUpdator implements Serializab
     @Override
     public void attemptToUpdate() {
 
-        ExecutorServiceManager.defaultExecutor.execute(new Runnable() {
+        Thread thread = new Thread(new Runnable() {
 
             @Override
             public void run() {
@@ -66,6 +65,8 @@ public class DynamicChannelsUpdator extends ChannelUpdator implements Serializab
             }
 
         });
+        
+        thread.start();
 
     }
 

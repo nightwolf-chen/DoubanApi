@@ -5,7 +5,6 @@
  */
 package org.nirvawolf.douban.api.user;
 
-import org.nirvawolf.douban.concurrent.ExecutorServiceManager;
 import java.util.ArrayList;
 import java.util.List;
 import org.nirvawolf.douban.network.HttpClientAdaptor;
@@ -32,12 +31,14 @@ public class UserAuthentication {
 
     public void attemptToAuth() {
         
-         ExecutorServiceManager.defaultExecutor.execute(new Runnable() {
+         Thread thread = new Thread(new Runnable() {
              @Override
              public void run() {
                  doAuth();
              }
          });
+         
+         thread.start();
          
     }
 

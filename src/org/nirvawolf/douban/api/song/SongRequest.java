@@ -11,7 +11,6 @@ import java.util.logging.Logger;
 import org.apache.http.client.utils.URIBuilder;
 import org.nirvawolf.douban.api.channel.Channel;
 import org.nirvawolf.douban.api.user.User;
-import org.nirvawolf.douban.concurrent.ExecutorServiceManager;
 import org.nirvawolf.douban.network.HttpClientAdaptor;
 import org.nirvawolf.douban.network.HttpClientAdaptorFactory;
 
@@ -117,7 +116,7 @@ public class SongRequest extends Request {
     @Override
     public void attemptToRequest() {
 
-        ExecutorServiceManager.defaultExecutor.execute(new Runnable() {
+        Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
 
@@ -129,6 +128,8 @@ public class SongRequest extends Request {
 
             }
         });
+        
+        thread.start();
 
     }
 

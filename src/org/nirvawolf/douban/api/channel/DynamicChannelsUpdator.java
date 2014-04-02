@@ -33,7 +33,11 @@ public class DynamicChannelsUpdator extends ChannelUpdator implements Serializab
     public DynamicChannelsUpdator(ChannelUpdatorDelegate delegate) {
         super(delegate);
     }
-
+    
+    public DynamicChannelsUpdator(){
+        super();
+    }
+    
     @Override
     public void attemptToUpdate() {
 

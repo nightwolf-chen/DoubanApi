@@ -22,6 +22,11 @@ public class StableChannelsUpdator extends ChannelUpdator implements Serializabl
         super(delegate);
         this.apiAddress = GlobleVarables.apiProtocool + "://" + GlobleVarables.apiDomainName + "/j/app/radio/channels";
     }
+    
+    public StableChannelsUpdator(){
+        super();
+        this.apiAddress = GlobleVarables.apiProtocool + "://" + GlobleVarables.apiDomainName + "/j/app/radio/channels";
+    }
 
     @Override
     public void attemptToUpdate() {

@@ -20,5 +20,14 @@ abstract public class ChannelUpdator implements Serializable{
         this.delegate = delegate;
     }
     
+    public ChannelUpdator(){
+        
+    }
+
+    public void setDelegate(ChannelUpdatorDelegate delegate) {
+        this.delegate = delegate;
+    }
+    
+    
     public abstract void attemptToUpdate();
 }
